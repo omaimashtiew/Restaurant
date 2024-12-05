@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Home</title>
+    <link rel="icon" href="/images/icon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="/css/styles.css"> 
+</head> 
+<body>  
+    <header> 
+        <div class="header-content"> 
+            <h1>Besnik</h1> 
+            <nav> 
+                <ul> 
+                    <li><a href="/home">Home</a></li> 
+					<li><a href="/home">Review</a></li>		 		
+					<li> 
+						<form th:action="@{/search}" method="get" class="search-form" target="_blank"> 
+						    <input type="text" name="keyword" id="keyword" th:value="${keyword}" placeholder="Search ..."> 
+						    <button type="submit">Search</button> 
+						</form>
+
+      
+					  </li>        
+                </ul> 
+            </nav> 
+        </div> 
+    </header>  
+    <main> 
+		<div th:if="${message}" class="notification"> 
+		           <p th:text="${message}"></p>
+		       </div>
+
+		<section class="main-section">
+		    <div class="text-content">
+		        <h3 class="maimp">Enjoy the experience</h3>
+		        <p class="maimp">Wait a minute</p>
+		        <p class="maimp">for delicious.</p>
+				
+				<div class="start">
+				                   <button id="start-journey">Dive into a Tasteful Odyssey--></button>
+				               </div>
+		    </div>
+		    <img src="/images/wpiic.jpg" alt="Transparent Image" class="center-right-image">
+			
+			
+		</section>
+		
+		<section class="middle-section">
+		    <div class="middle-content">
+		        <h1 class="mid">Taste of Food</h1>
+		    </div>
+
+				<div class="categories-grid">
+				       <a href="/products?category=Dessert" target="_blank" class="category-item">
+				           <img src="/images/dessert.jpg" alt="Dessert">
+				           <div class="category-info">
+				               <h3>Dessert</h3>
+				               <p>Sweet treats to satisfy your cravings.</p>
+				           </div>
+				       </a>
+
+
+					   <a href="/products?category=Burger" target="_blank" class="category-item">
+					               <img src="/images/burger.jpg" alt="Burger">
+					               <div class="category-info">
+					                   <h3>Burger</h3>
+					                   <p>Juicy burgers with fresh ingredients.</p>
+					               </div>
+					           </a>
+
+					           <a href="/products?category=Pasta" target="_blank" class="category-item">
+					               <img src="/images/pasta.jpg" alt="Pasta">
+					               <div class="category-info">
+					                   <h3>Pasta</h3>
+					                   <p>Delicious pasta dishes with rich flavors.</p>
+					               </div>
+					           </a>
+
+					           <a href="/products?category=Juice" target="_blank" class="category-item">
+					               <img src="/images/juice.jpg" alt="Juice">
+					               <div class="category-info">
+					                   <h3>Juice</h3>
+					                   <p>Freshly squeezed juices for refreshment.</p>
+					               </div>
+					           </a>
+
+					           <a href="/products?category=Salad" target="_blank" class="category-item">
+					               <img src="/images/salad.jpg" alt="Salad">
+					               <div class="category-info">
+					                   <h3>Salad</h3>
+					                   <p>Healthy salads with a variety of toppings.</p>
+					               </div>
+					           </a>
+
+					           <a href="/products?category=Pizza" target="_blank" class="category-item">
+					               <img src="/images/pizza.jpg" alt="Pizza">
+					               <div class="category-info">
+					                   <h3>Pizza</h3>
+					                   <p>Hot and cheesy pizzas straight from the oven.</p>
+					               </div>
+					           </a>
+					       </div>
+		</section>
+
+
+			
+		
+		<section class="additional-content" id="additional-content">        
+        <div class="pagination">
+            <a th:if="${currentPage > 0}" th:href="@{/home(page=${currentPage - 1}, size=${productPage.size})}">Previous</a>
+            <span>Page <span th:text="${currentPage + 1}"></span> of <span th:text="${totalPages}"></span></span>
+            <a th:if="${currentPage + 1 < totalPages}" th:href="@{/home(page=${currentPage + 1}, size=${productPage.size})}">Next</a>
+        </div>
+    </main>
+	</section>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    var button = document.getElementById('start-journey');
+		    button.addEventListener('click', function() {
+		        document.querySelector('.middle-section').scrollIntoView({
+		            behavior: 'smooth'
+		        });
+		    });
+		});
+
+	   </script>
+	   <script>
+		
+	       window.onscroll = function() {
+	           var scrollTopBtn = document.getElementById('scrollTopBtn');
+	           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	               scrollTopBtn.style.display = 'block'; // Show button
+	           } else {
+	               scrollTopBtn.style.display = 'none'; // Hide button
+	           }
+	       };
+
+	       // Scroll smoothly back to the top when the button is clicked
+	       function scrollToTop() {
+	           window.scrollTo({
+	               top: 0,
+	               behavior: 'smooth' // Smooth scrolling
+	           });
+	       }
+		   
+	   </script>
+	   <script>
+		// Script to handle the smooth scroll for the 'start-journey' button
+		document.addEventListener('DOMContentLoaded', function() {
+		    var button = document.getElementById('start-journey');
+		    button.addEventListener('click', function() {
+		        document.querySelector('.middle-section').scrollIntoView({
+		            behavior: 'smooth'
+		        });
+		    });
+		});
+
+		// Script to show the 'scroll to top' button when scrolling down
+		window.onscroll = function() {
+		    var scrollTopBtn = document.getElementById('scrollTopBtn');
+		    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+		        scrollTopBtn.style.display = 'block'; // Show button
+		    } else {
+		        scrollTopBtn.style.display = 'none'; // Hide button
+		    }
+		};
+
+		// Function to scroll smoothly back to the top when the 'scroll to top' button is clicked
+		function scrollToTop() {
+		    window.scrollTo({
+		        top: 0,
+		        behavior: 'smooth' // Smooth scrolling
+		    });
+		}
+
+
+		
+		</script>
+
+	   <button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn">↑ Top</button>
+
+</body>
+</html>
+
+
+
+

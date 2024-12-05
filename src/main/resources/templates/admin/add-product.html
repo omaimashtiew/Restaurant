@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Add Product</h1>
+	<form action="/admin/add" method="post" enctype="multipart/form-data">
+	    <label for="name">Name:</label>
+	    <input type="text" id="name" name="name" required>
+	    <label for="price">Price:</label>
+	    <input type="number" id="price" name="price" step="0.01" required>
+	    <label for="category">Category:</label>
+	    <select id="category" name="category" required>
+	        <option value="dessert">Dessert</option>
+	        <option value="Burger">Burger</option>
+			<option value="Pasta">Pasta</option>
+			<option value="Juice">Juice</option>
+			<option value="Salad">Salad</option>
+			<option value="Pizza">Pizza</option>
+
+
+	    </select>
+	    <label for="photo">Photo:</label>
+	    <input type="file" id="photo" name="photo" required>
+	    <button type="submit">Add Product</button>
+	</form>
+
+</body>
+</html>

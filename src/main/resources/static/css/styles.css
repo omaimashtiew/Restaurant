@@ -1,0 +1,436 @@
+/* General resets */
+body, html {
+	background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Body background */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+h3{
+	
+	font-size: 20px;
+	font-family:cursive;
+	color: rgb(0, 128, 0);
+	margin: 20px 0;
+	padding: 60px;
+	
+}
+.maimp
+{
+	font-size: 50px;
+	font-weight: bold;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255); /* Header background color */
+    color: rgb(0, 0, 0); /* Header text color */
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 24px; /* Set a consistent font size */
+    font-weight: bold; /* Make sure the header text is bold */
+}
+
+.header-content nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header-content nav ul li {
+    margin: 0;
+}
+
+.header-content nav ul li a {
+    color: rgb(0, 0, 0); /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 16px; /* Set a consistent font size */
+    font-weight: bold; /* Make sure the link text is bold */
+}
+
+.header-content nav form {
+    display: flex;
+    align-items: center;
+}
+
+.header-content nav form label {
+    color: rgb(0, 0, 0); /* Form label color */
+    margin-right: 5px; /* Space between label and input */
+    font-size: 16px; /* Set a consistent font size for labels */
+}
+
+.header-content nav form input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Set a consistent font size for input fields */
+}
+
+.header-content nav form button {
+    padding: 5px 10px;
+    background-color: rgb(128, 128, 128); /* Button background color */
+    border: none;
+    color: white; /* Button text color */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Set a consistent font size for buttons */
+}
+
+.header-content nav form button:hover {
+    background-color: #45a049; /* Button hover color */
+}
+.header-content nav ul li a:hover {
+    color:  #45a049;  /* Green color */
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for readability */
+}
+
+/* Responsive product list */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product {
+    flex: 1 1 calc(30% - 40px); /* 3 per row, with spacing */
+    box-sizing: border-box;
+    background-color: #c0c0c0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Cart styling */
+.cart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* Adjust layout on smaller screens */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(45% - 20px); /* 2 per row */
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Adjust layout on extra small screens */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column; /* Stacks header elements */
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stacks nav items */
+        padding: 10px 0;
+    }
+
+    .product {
+        flex: 1 1 100%; /* Full width for small screens */
+    }
+
+}
+/* Ensure the search form is displayed correctly */
+
+
+/* Main section full-screen styling */
+.main-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* Align items to the top */
+    height: 80vh; /* Full height of the viewport */
+    padding: 20px;
+    background: rgb(255, 255, 255); /* Optional: Set background color */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Text content styling */
+.text-content {
+    position: absolute;
+    top: 0; /* Align to the top of the container */
+    left: 0; /* Optionally, align to the left */
+    padding: 20px;
+    max-width: 50%; /* Control the width of the text area */
+}
+.text-content h3,
+.text-content .maimp {
+    margin: 0; 
+    padding: 0;
+}
+
+/* Main image positioning */
+.center-right-image {
+    position: absolute; /* Allows precise positioning within the container */
+    right: 10%; /* Adjust distance from the right edge */
+    top: 10%; /* Adjust distance from the top */
+    transform: translateY(-10%); /* Fine-tune vertical positioning */
+    max-width: 300px; /* Control image size */
+    height: auto; /* Maintain aspect ratio */
+    background-color: transparent; /* Ensure no background color is applied */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-content {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .center-right-image {
+        max-width: 200px; /* Reduce image size on smaller screens */
+        right: 5px; /* Adjust positioning */
+    }
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination a, 
+.pagination span {
+    color: rgb(0, 64, 0);
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination a:active {
+    background-color: #ddd;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+
+.pagination a[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.start button {
+    background-color: rgb(192, 192, 192); /* Green background */
+    color: rgb(0, 64, 0); /* White text */
+    border: none; /* Remove borders */
+    padding: 10px 20px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block display */
+    font-size: 19px; /* Font size */
+    margin: 10px 0; /* Margin around button */
+    cursor: pointer; /* Pointer cursor on hover */
+	margin-top: 100px;
+    transition: background-color 0.3s ease; 
+	margin-left: 90px;
+	border-radius: 12px;
+	border: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
+.start button:hover {
+    background-color: rgb(128, 255, 128); /* Darker green on hover */
+}
+.text-content p {
+    margin-bottom: 150px; /* Adjust this value as needed */
+}
+/* Scroll to top button styling */
+.scroll-top-btn {
+    position: fixed; /* Fixed position in the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove borders */
+    border-radius: 50%; /* Round button */
+    padding: 10px 15px; /* Button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    display: none; /* Hidden by default */
+    transition: background-color 0.3s, opacity 0.3s; /* Smooth transitions */
+    z-index: 100; /* Ensure it stays on top */
+	font-weight: bold;
+	font-size: larger;
+
+}
+
+.scroll-top-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for the search form */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the label, input, and button */
+}
+
+.search-form label {
+    font-size: 1rem; /* Adjust label size */
+    margin-right: 10px; /* Space between label and input */
+}
+
+.search-form input {
+    padding: 8px;
+    width: 200px; /* Adjust width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-form button {
+    padding: 8px 16px;
+    background-color: #4CAF50; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.middle-section {
+    display: flex;                /* Use flexbox for layout */
+    flex-direction: column;       /* Arrange items in a column */
+    align-items: center;          /* Center items horizontally */
+    padding: 20px;                /* Add some padding */
+    background-color: rgb(255, 255, 255);    /* Background color for the section */
+    height: auto;                 /* Adjust height as needed */
+	margin-bottom: 60px;
+}
+
+.middle-content {
+    width: 100%;                  /* Take full width */
+    text-align: center;           /* Center the text inside the middle-content */
+    margin-bottom: 60px;
+}
+
+.mid {
+    margin: 0;                    /* Remove default margins */
+    padding-top: 10px;            /* Optional: Add padding at the top */
+    font-size: 2em;               /* Adjust font size */
+}
+
+.categories-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    gap: 20px; /* Space between grid items */
+}
+
+.category-item {
+    display: flex;                /* Use flexbox for each category item */
+    align-items: center;          /* Center items vertically */
+    background: #fff;             /* Background color for items */
+    padding: 10px;                /* Padding inside each category box */
+    border: 1px solid #ddd;       /* Border around each item */
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    height: auto;                 /* Adjust to fit content */
+}
+
+.category-item img {
+    width: 80px;                  /* Fixed width for images */
+    height: 80px;                 /* Fixed height for images */
+    border-radius: 5px;           /* Rounded corners for images */
+    margin-right: 10px;           /* Space between image and text */
+}
+
+.category-info {
+    display: flex;
+    flex-direction: column;       /* Stack name and description vertically */
+    justify-content: center;      /* Center content vertically */
+    text-align: left;             /* Align text to the left */
+}
+
+.category-item h3 {
+    margin: 0 0 5px 0;            /* Space below the heading */
+    font-size: 1em;               /* Adjust font size */
+    color: #333;                  /* Text color */
+}
+
+.category-item p {
+    margin: 0;
+    font-size: 0.8em;             /* Adjust font size */
+    color: #666;                  /* Text color */
+}
+
+/* Hover effect */
+.category-item:hover {
+    background: #28a745; /* Change background color to green on hover */
+    color: #fff; /* Change text color to white for contrast */
+    border-color: #28a745; /* Change border color to green */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.category-item:hover h3,
+.category-item:hover p {
+    color: #fff; /* Change heading and paragraph text color to white on hover */
+}
+
+.additional-content {
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Optional: Padding */
+    display: none; /* Hidden by default, shown when content is loaded */
+}
+
+.notification {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Light red border */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.notification p {
+    margin: 0;
+}
+
+.notification::before {
+    content: '⚠️'; /* Warning icon */
+    font-size: 24px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
